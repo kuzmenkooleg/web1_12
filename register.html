@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реєстрація користувача</title>
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-bottom: 3px solid red;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .blog-info {
+            line-height: 1.4;
+        }
+        header .blog-info h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+        main {
+            flex-grow: 1;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .registration-form-container {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: 350px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .registration-form-container h2 {
+            text-align: center;
+            background-color: #ADD8E6;
+            padding: 10px;
+            margin: -20px -20px 20px -20px;
+            font-size: 1.2em;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="blog-info">
+            <h1>Мій особистий блог</h1>
+            <p>Кузьменко Олег</p>
+        </div>
+        <nav>
+            <a href="page_2.html" style="
+            <a href="#">Вхід</a>
+            <a href="page_3.html">Реєстрація</a> 
+        </nav>
+    </header>
+
+    <main>
+        <div class="registration-form-container">
+            <h2>Реєстрація користувача</h2>
+            <form action="#" method="POST">
+
+                <div class="form-group">
+                    <label for="surname">Прізвище</label>
+                    <input type="text" id="surname" name="surname" required>
+                </div>            
+        </div>
+    </main>
+
+    <footer>
+        <p>© Всі права захищені.</p>
+        <p>Розробник: Кузьменко О.Р.</p>
+    </footer>
+
+</body>
+</html>
