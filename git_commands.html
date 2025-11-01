@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Команди Git</title>
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-bottom: 3px solid red;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .blog-info {
+            line-height: 1.4;
+        }
+        header .blog-info h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.8em;
+            margin-top: auto;
+        }
+
+        .git-commands-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-grow: 1;
+        }
+        .command-group {
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .command-group h3 {
+            font-size: 1.2em;
+            margin-top: 0;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #ccc;
+        }
+        .command-group.create h3 { color: #007bff; }
+        .command-group.branches h3 { color: #28a745; }
+        .command-group.change h3 { color: #ffc107; }
+        .command-group.sync h3 { color: #dc3545; }
+        .command-group.observe h3 { color: #6f42c1; }
+        .command-group.finally h3 { color: #dc3545; }
+        .command-list {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+        }
+        .command-list li {
+            font-size: 0.9em;
+            margin-bottom: 8px;
+            border-bottom: 1px dotted #eee;
+            padding-bottom: 5px;
+        }
+        .command-list li code {
+            display: block;
+            background-color: #f8f9fa;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+            color: #333;
+            margin-top: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="blog-info">
+            <h1>Мій особистий блог</h1>
+            <p>Кузьменко Олег</p>
+        </div>
+        <nav>
+            <a href="page_3.html" style="
+            <a href="#">Вхід</a>
+            <a href="page_2.html" style="
+            <a href="register.html">Реєстрація</a> 
+        </nav>
+    </header>
+
+<main class="git-commands-container">
+        <div class="command-group create">
+            <h3>Create a Repository</h3>
+            <ul class="command-list">
+                <li>
+                    <span>From scratch – Create a new local repository</span>
+                    <code>$ git init [project name]</code>
+                </li>
+                <li>
+                    <span>Download from an existing repository</span>
+                    <code>$ git clone my_url</code>
+                </li>
+            </ul>
+        </div>
+    
+    <div class="command-group observe">
+            <h3>Observe your Repository</h3>
+            <ul class="command-list">
+                <li>
+                    <span>List new or modified files not yet committed</span>
+                    <code>$ git status</code>
+                </li>
+                <li>
+                    <span>Show the changes to files not yet staged</span>
+                    <code>$ git diff</code>
+                </li>
+                <li>
+                    <span>Show the changes to staged files</span>
+                    <code>$ git diff --cached</code>
+                </li>
+                <li>
+                    <span>Show all staged and unstaged file changes</span>
+                    <code>$ git diff HEAD</code>
+                </li>
+                <li>
+                    <span>Show the changes between two commit ids</span>
+                    <code>$ git diff commit1 commit2</code>
+                </li>
+                <li>
+                    <span>List the change dates and authors for a file</span>
+                    <code>$ git blame [file]</code>
+                </li>
+                <li>
+                    <span>Show the file changes for a commit id and/or file</span>
+                    <code>$ git show [commit]:[file]</code>
+                </li>
+                <li>
+                    <span>Show full change history</span>
+                    <code>$ git log</code>
+                </li>
+                <li>
+                    <span>Show change history for file/directory including diffs</span>
+                    <code>$ git log -p [file/directory]</code>
+                </li>
+            </ul>
+        </div>
+    
+    <div class="command-group branches">
+            <h3>Working with Branches</h3>
+            <ul class="command-list">
+                <li>
+                    <span>List all local branches</span>
+                    <code>$ git branch</code>
+                </li>
+                <li>
+                    <span>List all branches, local and remote</span>
+                    <code>$ git branch -av</code>
+                </li>
+                <li>
+                    <span>Switch to a branch, my_branch, and update working directory</span>
+                    <code>$ git checkout my_branch</code>
+                </li>
+                <li>
+                    <span>Create a new branch called new_branch</span>
+                    <code>$ git branch new_branch</code>
+                </li>
+                <li>
+                    <span>Delete the branch called my_branch</span>
+                    <code>$ git branch -d my_branch</code>
+                </li>
+                <li>
+                    <span>Merge branch_a into branch_b</span>
+                    <code>$ git checkout branch_b</code>
+                    <code>$ git merge branch_a</code>
+                </li>
+                <li>
+                    <span>Tag the current commit</span>
+                    <code>$ git tag my_tag</code>
+                </li>
+            </ul>
+        </div>
+
+    <div class="command-group change">
+            <h3>Make a change</h3>
+            <ul class="command-list">
+                <li>
+                    <span>Stages the file, ready for commit</span>
+                    <code>$ git add [file]</code>
+                </li>
+                <li>
+                    <span>Stage all changed files, ready for commit</span>
+                    <code>$ git add .</code>
+                </li>
+                <li>
+                    <span>Commit all staged files to versioned history</span>
+                    <code>$ git commit -m "commit message"</code>
+                </li>
+                <li>
+                    <span>Commit all your tracked files to versioned history</span>
+                    <code>$ git commit -am "commit message"</code>
+                </li>
+                <li>
+                    <span>Unstages file, keeping the file changes</span>
+                    <code>$ git reset [file]</code>
+                </li>
+                <li>
+                    <span>Revert everything to the last commit</span>
+                    <code>$ git reset --hard</code>
+                </li>
+            </ul>
+        </div>
+
+    <div class="command-group sync">
+            <h3>Synchronize</h3>
+            <ul class="command-list">
+                <li>
+                    <span>Get the latest changes from origin (no merge)</span>
+                    <code>$ git fetch</code>
+                </li>
+                <li>
+                    <span>Fetch the latest changes from origin and merge</span>
+                    <code>$ git pull</code>
+                </li>
+                <li>
+                    <span>Fetch the latest changes from origin and rebase</span>
+                    <code>$ git pull --rebase</code>
+                </li>
+                <li>
+                    <span>Push local changes to the origin</span>
+                    <code>$ git push</code>
+                </li>
+            </ul>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© Всі права захищені.</p>
+        <p>Розробник: Кузьменко О.Р.</p>
+    </footer>
+
+</body>
+</html>
